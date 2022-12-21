@@ -144,7 +144,8 @@ class Trainer:
 
         for epoch in range(config.max_epochs):
 
-            run_epoch('train', epoch_num=epoch)
+            if __name__ == '__main__':
+                run_epoch('train', epoch_num=epoch)
             # if self.test_dataset is not None:
             #     test_loss = run_epoch('test')
 
