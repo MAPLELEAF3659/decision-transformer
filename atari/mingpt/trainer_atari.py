@@ -173,9 +173,6 @@ class Trainer:
             if self.config.ckpt_path is not None:
                 self.save_checkpoint()
 
-            if self.config.model_path is not None:
-                self.save_model()
-
             logger.info("eval: epoch %s ", epoch)
             # -- pass in target returns
             if self.config.model_type == 'naive':
@@ -193,6 +190,9 @@ class Trainer:
                     raise NotImplementedError()
             else:
                 raise NotImplementedError()
+                
+        if self.config.model_path is not None:
+            self.save_model()
 
     def get_returns(self, ret):
         self.model.train(False)
