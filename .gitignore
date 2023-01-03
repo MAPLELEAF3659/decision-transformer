@@ -1,2 +1,3 @@
 *.pyc
-atari/datasets
+*.pth
+atari/dqn_replay
